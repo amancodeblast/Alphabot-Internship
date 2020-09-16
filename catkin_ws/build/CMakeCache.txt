@@ -954,6 +954,12 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
+//Value Computed by CMake
+mypkg_BINARY_DIR:STATIC=/home/aman/ros_projects/catkin_ws/build/mypkg
+
+//Value Computed by CMake
+mypkg_SOURCE_DIR:STATIC=/home/aman/ros_projects/catkin_ws/src/mypkg
+
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/melodic/share/nodelet/cmake
 
@@ -1476,7 +1482,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=25
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=26
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2187,5 +2193,5 @@ bullet_bullet_INCLUDEDIR:INTERNAL=
 bullet_bullet_LIBDIR:INTERNAL=
 bullet_bullet_PREFIX:INTERNAL=
 bullet_bullet_VERSION:INTERNAL=
-prefix_result:INTERNAL=
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

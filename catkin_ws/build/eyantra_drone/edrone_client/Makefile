@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/aman/ros_projects/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -80,17 +68,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -102,6 +79,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -111,6 +99,29 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -123,17 +134,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
+
+# Convenience name for target.
+edroneswarm: eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
+
+.PHONY : edroneswarm
+
+# fast build rule for target.
+edroneswarm/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/build
+.PHONY : edroneswarm/fast
+
+# Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
+
+# Convenience name for target.
+edrone_client: eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
+
+.PHONY : edrone_client
+
+# fast build rule for target.
+edrone_client/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/build
+.PHONY : edrone_client/fast
+
+# Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages.dir/rule:
 	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages.dir/rule
 .PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages.dir/rule
@@ -181,21 +211,6 @@ edrone_client_generate_messages: eyantra_drone/edrone_client/CMakeFiles/edrone_c
 edrone_client_generate_messages/fast:
 	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages.dir/build
 .PHONY : edrone_client_generate_messages/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_py.dir/rule:
@@ -213,184 +228,19 @@ edrone_client_generate_messages_py/fast:
 .PHONY : edrone_client_generate_messages_py/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+sensor_msgs_generate_messages_lisp: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
-
-# Convenience name for target.
-edrone_client_gencpp: eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
-
-.PHONY : edrone_client_gencpp
-
-# fast build rule for target.
-edrone_client_gencpp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/build
-.PHONY : edrone_client_gencpp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
-
-# Convenience name for target.
-edrone_client_genlisp: eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
-
-.PHONY : edrone_client_genlisp
-
-# fast build rule for target.
-edrone_client_genlisp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/build
-.PHONY : edrone_client_genlisp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
-
-# Convenience name for target.
-edrone_client_gennodejs: eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
-
-.PHONY : edrone_client_gennodejs
-
-# fast build rule for target.
-edrone_client_gennodejs/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/build
-.PHONY : edrone_client_gennodejs/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/edroneclient.dir/rule:
@@ -408,124 +258,64 @@ edroneclient/fast:
 .PHONY : edroneclient/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+sensor_msgs_generate_messages_py: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_py
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+sensor_msgs_generate_messages_py/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+sensor_msgs_generate_messages_nodejs: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+sensor_msgs_generate_messages_cpp: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/rule
+sensor_msgs_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/build.make eyantra_drone/edrone_client/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
-
-# Convenience name for target.
-edroneswarm: eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/rule
-
-.PHONY : edroneswarm
-
-# fast build rule for target.
-edroneswarm/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edroneswarm.dir/build
-.PHONY : edroneswarm/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
-
-# Convenience name for target.
-_edrone_client_generate_messages_check_deps_edrone_services: eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
-
-.PHONY : _edrone_client_generate_messages_check_deps_edrone_services
-
-# fast build rule for target.
-_edrone_client_generate_messages_check_deps_edrone_services/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/build.make eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/build
-.PHONY : _edrone_client_generate_messages_check_deps_edrone_services/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
-
-# Convenience name for target.
-edrone_client_geneus: eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
-
-.PHONY : edrone_client_geneus
-
-# fast build rule for target.
-edrone_client_geneus/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/build
-.PHONY : edrone_client_geneus/fast
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_msgs.dir/rule:
@@ -543,19 +333,19 @@ _edrone_client_generate_messages_check_deps_edrone_msgs/fast:
 .PHONY : _edrone_client_generate_messages_check_deps_edrone_msgs/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-edrone_client_genpy: eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
+edrone_client_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
 
-.PHONY : edrone_client_genpy
+.PHONY : edrone_client_generate_messages_eus
 
 # fast build rule for target.
-edrone_client_genpy/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/build
-.PHONY : edrone_client_genpy/fast
+edrone_client_generate_messages_eus/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/build
+.PHONY : edrone_client_generate_messages_eus/fast
 
 # Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_cpp.dir/rule:
@@ -573,19 +363,64 @@ edrone_client_generate_messages_cpp/fast:
 .PHONY : edrone_client_generate_messages_cpp/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
 
 # Convenience name for target.
-edrone_client_generate_messages_eus: eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/rule
+edrone_client_gencpp: eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/rule
 
-.PHONY : edrone_client_generate_messages_eus
+.PHONY : edrone_client_gencpp
 
 # fast build rule for target.
-edrone_client_generate_messages_eus/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_eus.dir/build
-.PHONY : edrone_client_generate_messages_eus/fast
+edrone_client_gencpp/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_gencpp.dir/build
+.PHONY : edrone_client_gencpp/fast
+
+# Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
+
+# Convenience name for target.
+edrone_client_genpy: eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/rule
+
+.PHONY : edrone_client_genpy
+
+# fast build rule for target.
+edrone_client_genpy/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_genpy.dir/build
+.PHONY : edrone_client_genpy/fast
+
+# Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
+
+# Convenience name for target.
+_edrone_client_generate_messages_check_deps_edrone_services: eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/rule
+
+.PHONY : _edrone_client_generate_messages_check_deps_edrone_services
+
+# fast build rule for target.
+_edrone_client_generate_messages_check_deps_edrone_services/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/build.make eyantra_drone/edrone_client/CMakeFiles/_edrone_client_generate_messages_check_deps_edrone_services.dir/build
+.PHONY : _edrone_client_generate_messages_check_deps_edrone_services/fast
+
+# Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
+
+# Convenience name for target.
+edrone_client_geneus: eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/rule
+
+.PHONY : edrone_client_geneus
+
+# fast build rule for target.
+edrone_client_geneus/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_geneus.dir/build
+.PHONY : edrone_client_geneus/fast
 
 # Convenience name for target.
 eyantra_drone/edrone_client/CMakeFiles/edrone_client_generate_messages_lisp.dir/rule:
@@ -618,19 +453,34 @@ edrone_client_generate_messages_nodejs/fast:
 .PHONY : edrone_client_generate_messages_nodejs/fast
 
 # Convenience name for target.
-eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
-.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
 
 # Convenience name for target.
-edrone_client: eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/rule
+edrone_client_genlisp: eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/rule
 
-.PHONY : edrone_client
+.PHONY : edrone_client_genlisp
 
 # fast build rule for target.
-edrone_client/fast:
-	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client.dir/build
-.PHONY : edrone_client/fast
+edrone_client_genlisp/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_genlisp.dir/build
+.PHONY : edrone_client_genlisp/fast
+
+# Convenience name for target.
+eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
+.PHONY : eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
+
+# Convenience name for target.
+edrone_client_gennodejs: eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/rule
+
+.PHONY : edrone_client_gennodejs
+
+# fast build rule for target.
+edrone_client_gennodejs/fast:
+	cd /home/aman/ros_projects/catkin_ws/build && $(MAKE) -f eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/build.make eyantra_drone/edrone_client/CMakeFiles/edrone_client_gennodejs.dir/build
+.PHONY : edrone_client_gennodejs/fast
 
 src/Communication.o: src/Communication.cpp.o
 
@@ -746,44 +596,34 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... test"
+	@echo "... list_install_components"
+	@echo "... edroneswarm"
+	@echo "... edrone_client"
 	@echo "... install/strip"
 	@echo "... edrone_client_generate_messages"
-	@echo "... install/local"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... edrone_client_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... edrone_client_gencpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... edrone_client_genlisp"
-	@echo "... edrone_client_gennodejs"
 	@echo "... rebuild_cache"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... edrone_client_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... edroneclient"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... edroneswarm"
-	@echo "... list_install_components"
-	@echo "... _edrone_client_generate_messages_check_deps_edrone_services"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... edrone_client_geneus"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... _edrone_client_generate_messages_check_deps_edrone_msgs"
-	@echo "... edrone_client_genpy"
-	@echo "... edrone_client_generate_messages_cpp"
 	@echo "... edrone_client_generate_messages_eus"
+	@echo "... edrone_client_generate_messages_cpp"
+	@echo "... edrone_client_gencpp"
+	@echo "... edrone_client_genpy"
+	@echo "... _edrone_client_generate_messages_check_deps_edrone_services"
+	@echo "... edrone_client_geneus"
 	@echo "... edrone_client_generate_messages_lisp"
 	@echo "... edrone_client_generate_messages_nodejs"
+	@echo "... edrone_client_genlisp"
 	@echo "... install"
-	@echo "... edrone_client"
-	@echo "... test"
+	@echo "... edrone_client_gennodejs"
 	@echo "... src/Communication.o"
 	@echo "... src/Communication.i"
 	@echo "... src/Communication.s"
