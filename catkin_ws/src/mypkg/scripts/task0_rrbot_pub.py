@@ -9,7 +9,7 @@ def rrbot_talker():
 	rospy.init_node('rrbot_talker', anonymous = True)
 	rate = rospy.Rate(5)
 	while not rospy.is_shutdown():
-		angle_value = -1.57 #90 in radians
+		angle_value = 1.57 #90 in radians
 		pub1.publish(angle_value)
 		pub2.publish(angle_value)
 		rate.sleep
