@@ -37,7 +37,7 @@ Summation of all the CTE is also inportant in as it should not be constantly inc
 ### Flow chart to explain the working of a PID algorithm
 
 
-
+![Flow chart image](https://github.com/amancodeblast/Alphabot-Internship/blob/master/images/Closed-loop-control-system-with-PID-controller.png)
 
 
 ### Optimum way to tune a PID controller
