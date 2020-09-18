@@ -78,5 +78,7 @@ using algorithm one can automate the task in an efficient way in order to tune i
 
 
 
-References (Videos/websites/books/papers)
+### References (Videos/websites/books/papers)
+[Controlling Self Driving Cars](https://www.youtube.com/watch?v=4Y7zG48uHRo)
+[Understanding Control System](https://www.youtube.com/watch?v=2BwUMk10WqI)
 
