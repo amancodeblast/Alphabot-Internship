@@ -82,3 +82,21 @@ using algorithm one can automate the task in an efficient way in order to tune i
 [Controlling Self Driving Cars](https://www.youtube.com/watch?v=4Y7zG48uHRo)
 [Understanding Control System](https://www.youtube.com/watch?v=2BwUMk10WqI)
 
+
+
+## Task 0 
+### How to launch
+Run the following commands in different terminals after making sure that the bash file is sourced
+roslaunch rrbot_gazebo rrbot_world.launch
+roslaunch rrbot_control rrbot_control.launch 
+rosrun mypkg task0_rrbot_pub.py
+
+## Task 1
+
+### How to launch 
+roslaunch task_1 task_1.launch
+roslaunch task_1 detect_whycon.launch
+rosrun task_1 get_marker_data.py
+
+
+
