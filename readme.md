@@ -74,7 +74,7 @@ By adjusting the gains “by hand”, you will quickly realize that the faster t
 
 **Twiddle** 
 using algorithm one can automate the task in an efficient way in order to tune it. You basically tune it until you have a decent setting. Until then you keep adjusting the values of constants Kp, Kd & Ki with a slight change. This is kind of a brute force method and there are other methods that can be more efficient. 
- 
+
 
 
 
@@ -92,6 +92,14 @@ roslaunch rrbot_control rrbot_control.launch
 rosrun mypkg task0_rrbot_pub.py
 
 ## Task 1
+
+## what the task is 
+
+TASK 1.2:
+a) Initialize a node called “whycon_detection”
+b) Create a python dictionary called whycon_coordiantes
+c) Subscribe to the ‘/whycon/poses’ topic
+d) Within your callback function, extract the whycon marker’s data into the created dictionary and print in the format as shown, where dictionary key is the marker ID and value is the coordinates of that marker
 
 ### How to launch 
 roslaunch task_1 task_1.launch
