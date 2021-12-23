@@ -9,7 +9,7 @@
   - ### Whycon markers
     - [Whycon markers](Documents/Whycon%20Markers.md)
   - ### PID controllers
-    - [PID controllers](Documents/PID%20Controllers.md)
+    - [PID controllers](Documents/PID%20Controller.md)
     - [What are closed loop controllers?](Documents/PID%20Controller.md#what-are-closed-loop-controllers)
     - [What are PID controllers?](Documents/PID%20Controller.md#what-are-pid-controllers?)
     - [Tuning PID controllers](Documents/PID%20Controller.md#tuning-pid-controllers)
