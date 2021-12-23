@@ -1,3 +1,26 @@
+# Alphabot-Internship
+  Repository for documenting work done as part of internship at Alphabot. All documentation is inside the [Documents](https://github.com/amancodeblast/Alphabot-Internship/tree/master/Documents) folder. Here are some quick links:
+  - ### Getting started 
+    - [Getting started](Documents/Getting%20started.md#getting-started)
+    - [Creating a workspace](Documents/Getting%20started.md#creating-a-workspace)
+    - [Creating a package](Documents/Getting%20started.md#creating-a-package)
+    - [Building python scripts](Documents/Getting%20started.md#building-and-running-python-scripts)
+    - [Building c++ files](Documents/Getting%20started.md#building-and-running-c-scripts)
+  - ### Whycon markers
+    - [Whycon markers](Documents/Whycon%20Markers.md)
+  - ### PID controllers
+    - [PID controllers](Documents/PID%20Controllers.md)
+    - [What are closed loop controllers?](Documents/PID%20Controller.md#what-are-closed-loop-controllers)
+    - [What are PID controllers?](Documents/PID%20Controller.md#what-are-pid-controllers?)
+    - [Tuning PID controllers](Documents/PID%20Controller.md#tuning-pid-controllers)
+  - ### ROS Commands
+    - [Commands](Documents/Commands.md)
+    - [roscore](Documents/Commands.md#roscore)
+    - [roslaunch](Documents/Commands.md#roslaunch)
+    - [rosrun](Documents/Commands.md#rosrun)
+  - ### Launchfiles
+    - [Launchfiles](Documents/Launchfiles.md)
+ 
 ### What are whycon markers and how do they work?
 Whycon markers are open source artificial markers a popular solution to the problem of localization, which are tailored for reliable detection and accurate localization. Working of these markers are based on efficient detection of a black and white roundel with known dimensions. These whycon markers work by combining on-demand thresholding, a flood-fill technique, and on-the-fly calculation of the detected pattern statistics.
 This algorithm employs a quick flood-fill technique to look for contiguous segments of dark pixels. The ratio of each and every segment’s pixels to its bounding box area is then compared to a value calculated from the known dimensions of the searched pattern. If the test is passed, the algorithm starts to look around the segment’s centroid for another continuous area of bright pixels and again verifies if the number of pixels conforms to the value calculated from its bounding box dimensions. Successful pass of the second test indicates that the algorithm found two elliptical, roughly concentric patterns and therefore subsequent stage verifies if the ratio of their areas, concentricity and semi-axes dimensions conform with the known shape of the searched pattern. Once the segments found pass this test, the pattern’s 3D position is calculated based on its known dimensions, camera parameters, and the user-defined frame of reference.
@@ -7,6 +30,7 @@ ArUco markers are small 2D barcodes. Each ArUco marker corresponds to a number, 
 ArUco markers are very useful as tags for many robotics and augmented reality applications. For example, one may place an ArUco next to a robot's charging station, an elevator button, or an object that a robot should manipulate.
 ArUco markers can be created with several standard dictionaries. Different dictionaries give rise to different numbers of pixels in the markers, and to different numbers of possible symbols that can be created using the dictionary. The default dictionary used by JeVois is 4x4 with 50 symbols. Other dictionaries are also supported by setting the parameter dictionary over serial port or in a config file, up to 7x7 with 1000 symbols.
 Detection Process in ArUco
+
 The marker detection process of ArUco is as follows:
     • Apply an Adaptive Thresholding to obtain borders (Figure 1)
     • Find contours. After that, not only the real markers are detected but also a lot of undesired borders. The rest of the process aims to filter out unwanted borders.
